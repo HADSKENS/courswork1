@@ -16,7 +16,7 @@ public class Main {
         Employee.allSalaty();
         Employee.smallSalaty();
         Employee.highSalatys();
-        Employee.averageSalaty();
+        Employee.averageSalary();
         Employee.onlyNames();
         Employee.upSalaty();
         Employee.printAll();

@@ -2,22 +2,22 @@ public class Employee {
     private static int id=0;
     private String name;
     private int departament;
-    private double salaty;
+    private double salary;
     private static int place;
     private int a;
-    private static int allSalatys;
-    private static double smallSalatys;
+    private static int allSalarys;
+    private static double smallSalarys;
     private static String smallSalatysName;
-    private static double highSalatys;
-    private static String highSlatysName;
-    private static int averageSalaty;
+    private static double highSalarys;
+    private static String highSlarysName;
+    private static int averageSalary;
     private static String onlynames;
-    private static double upSalatys;
+    private static double upSalarys;
     public Employee(String name, int departament, int salaty) {
         id++;
         this.name = name;
         this.departament = departament;
-        this.salaty = salaty;
+        this.salary = salaty;
         this.a=id;
 
     }
@@ -39,45 +39,45 @@ public class Employee {
     }
     public static void allSalaty(){
         System.out.println();
-        allSalatys=0;
+        allSalarys=0;
         for (int i = 0; i < Main.employee.length; i++) {
             Employee employee=Main.employee[i];
-            allSalatys+= employee.getSalaty();
+            allSalarys+= employee.getSalary();
         }
-        System.out.println("Затраты на зарплаты сотрудникам составляют: "+allSalatys+" рублей.");
+        System.out.println("Затраты на зарплаты сотрудникам составляют: "+allSalarys+" рублей.");
     }
     public static void smallSalaty(){
         System.out.println();
         Employee first=Main.employee[0];
-        smallSalatys= first.getSalaty();
+        smallSalarys= first.getSalary();
         smallSalatysName=first.getName();
         for (int i = 0; i < Main.employee.length; i++) {
             Employee employees=Main.employee[i];
-            if (smallSalatys>employees.getSalaty()){
-                smallSalatys=employees.getSalaty();
+            if (smallSalarys>employees.getSalary()){
+                smallSalarys=employees.getSalary();
                 smallSalatysName=employees.getName();
             }
         }
-        System.out.println("Наименьшая зарплата у "+smallSalatysName+" она составляет "+smallSalatys+" рублей.");
+        System.out.println("Сотрудник с наименьшей зарплатой "+smallSalatysName+" размер зарплаты "+smallSalarys+" рублей.");
     }
     public static void highSalatys(){
         System.out.println();
         Employee first=Main.employee[0];
-        highSalatys=first.getSalaty();
-        highSlatysName=first.getName();
+        highSalarys=first.getSalary();
+        highSlarysName=first.getName();
         for (int i = 0; i < Main.employee.length; i++) {
             Employee employees=Main.employee[i];
-            if (highSalatys<employees.getSalaty()){
-                highSalatys=employees.getSalaty();
-                highSlatysName=employees.getName();
+            if (highSalarys<employees.getSalary()){
+                highSalarys=employees.getSalary();
+                highSlarysName=employees.getName();
             }
         }
-        System.out.println("Наибольшая зарплата у "+highSlatysName+" она составляет "+highSalatys+" рублей.");
+        System.out.println("Сотрудник с наибольшей зарплатой "+highSlarysName+" размер зарплаты "+highSalarys+" рублей.");
     }
-    public static void averageSalaty(){
+    public static void averageSalary(){
         System.out.println();
-        averageSalaty=allSalatys/id;
-        System.out.println("Среднее значение зарплат составляет "+averageSalaty+" рублей.");
+        averageSalary=allSalarys/id;
+        System.out.println("Среднее значение зарплат составляет "+averageSalary+" рублей.");
     }
     public static void onlyNames(){
         System.out.println();
@@ -89,9 +89,9 @@ public class Employee {
     public static void upSalaty(){
         for (int i = 0; i < Main.employee.length; i++) {
             Employee employees = Main.employee[i];
-            upSalatys= employees.getSalaty();
-            upSalatys=upSalatys*1.1;
-            employees.setSalaty(upSalatys);
+            upSalarys= employees.getSalary();
+            upSalarys=upSalarys*1.1;
+            employees.setSalary(upSalarys);
             Main.employee[i]=employees;
         }
     }
@@ -106,8 +106,8 @@ public class Employee {
     public int getDepartament(){
         return departament;
     }
-    public double getSalaty(){
-        return salaty;
+    public double getSalary(){
+        return salary;
     }
     public int getPlace(){
         return place;
@@ -120,11 +120,11 @@ public class Employee {
         this.departament = departament;
     }
 
-    public void setSalaty(double salaty) {
-        this.salaty = salaty;
+    public void setSalary(double salaty) {
+        this.salary = salaty;
     }
     @Override
     public String toString(){
-        return "id: "+a+" ФИО: "+name+" Номер департамента: "+departament+" Зарплата: "+salaty;
+        return "id: "+a+" ФИО: "+name+" Номер департамента: "+departament+" Зарплата: "+salary;
     }
 }
