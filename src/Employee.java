@@ -27,32 +27,32 @@ public class Employee {
         }
         id=place;
         Employee newEmployee = new Employee(name, departament,salaty);
-        Main.employee[place++] = newEmployee;
+        Main.employees[place++] = newEmployee;
     }
 
     public static void printAll() {
         System.out.println();
-        for (int i = 0; i < Main.employee.length; i++) {
-            Employee employees = Main.employee[i];
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees = Main.employees[i];
             System.out.println(employees);
         }
     }
-    public static void allSalaty(){
+    public static void allSalary(){
         System.out.println();
         allSalarys=0;
-        for (int i = 0; i < Main.employee.length; i++) {
-            Employee employee=Main.employee[i];
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employee=Main.employees[i];
             allSalarys+= employee.getSalary();
         }
         System.out.println("Затраты на зарплаты сотрудникам составляют: "+allSalarys+" рублей.");
     }
-    public static void smallSalaty(){
+    public static void smallSalary(){
         System.out.println();
-        Employee first=Main.employee[0];
+        Employee first=Main.employees[0];
         smallSalarys= first.getSalary();
         smallSalatysName=first.getName();
-        for (int i = 0; i < Main.employee.length; i++) {
-            Employee employees=Main.employee[i];
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees=Main.employees[i];
             if (smallSalarys>employees.getSalary()){
                 smallSalarys=employees.getSalary();
                 smallSalatysName=employees.getName();
@@ -60,13 +60,13 @@ public class Employee {
         }
         System.out.println("Сотрудник с наименьшей зарплатой "+smallSalatysName+" размер зарплаты "+smallSalarys+" рублей.");
     }
-    public static void highSalatys(){
+    public static void highSalarys(){
         System.out.println();
-        Employee first=Main.employee[0];
+        Employee first=Main.employees[0];
         highSalarys=first.getSalary();
         highSlarysName=first.getName();
-        for (int i = 0; i < Main.employee.length; i++) {
-            Employee employees=Main.employee[i];
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees=Main.employees[i];
             if (highSalarys<employees.getSalary()){
                 highSalarys=employees.getSalary();
                 highSlarysName=employees.getName();
@@ -81,18 +81,18 @@ public class Employee {
     }
     public static void onlyNames(){
         System.out.println();
-        for (int i = 0; i < Main.employee.length; i++) {
-            Employee employees=Main.employee[i];
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees=Main.employees[i];
             System.out.println("ФИО: "+employees.getName());
         }
     }
-    public static void upSalaty(){
-        for (int i = 0; i < Main.employee.length; i++) {
-            Employee employees = Main.employee[i];
+    public static void upSalary(){
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees = Main.employees[i];
             upSalarys= employees.getSalary();
             upSalarys=upSalarys*1.1;
             employees.setSalary(upSalarys);
-            Main.employee[i]=employees;
+            Main.employees[i]=employees;
         }
     }
 
