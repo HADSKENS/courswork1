@@ -13,7 +13,16 @@ public class Employee {
     private static int averageSalary;
     private static String onlynames;
     private static double upSalarys;
+    private static double smallSalarysDepartament;
+    private static int smallSalarysDepartamentCout;
 
+    private static double highSalarysDepartament;
+    private static int highSalarysDepartamentCout;
+
+    private static double allSalarysDepartament;
+    private static int allSalarysDepartamentCout;
+    private static double index;
+    private static int allDepartamentCount;
     public Employee(String name, int departament, int salaty) {
         id++;
         this.name = name;
@@ -101,6 +110,137 @@ public class Employee {
             upSalarys = upSalarys * 1.1;
             employees.setSalary(upSalarys);
             Main.employees[i] = employees;
+        }
+    }
+    public static void smallsalaryDepartament(int departament) {
+        System.out.println();
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees = Main.employees[i];
+            if (departament == employees.getDepartament()) {
+                Main.salarysDepartament[smallSalarysDepartamentCout]=employees;
+                smallSalarysDepartamentCout++;
+            }
+        }
+        Employee employees=Main.salarysDepartament[0];
+        smallSalarysDepartament=employees.getSalary();
+        for (int i = 0; i < smallSalarysDepartamentCout; i++) {
+            Employee employeess=Main.salarysDepartament[i];
+            if (smallSalarysDepartament>employeess.getSalary()){
+                smallSalarysDepartament=employeess.getSalary();
+            }
+        }
+        System.out.println(smallSalarysDepartament);
+    }
+    public static void highsalaryDepartament(int departament) {
+        System.out.println();
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees = Main.employees[i];
+            if (departament == employees.getDepartament()) {
+                Main.salarysDepartament[highSalarysDepartamentCout]=employees;
+                highSalarysDepartamentCout++;
+            }
+        }
+        Employee employees=Main.salarysDepartament[0];
+        highSalarysDepartament=employees.getSalary();
+        for (int i = 0; i < highSalarysDepartamentCout; i++) {
+            Employee employeess=Main.salarysDepartament[i];
+            if (highSalarysDepartament<employeess.getSalary()){
+                highSalarysDepartament=employeess.getSalary();
+            }
+        }
+        System.out.println(highSalarysDepartament);
+    }
+    public static void allSalarysDepartament(int departament){
+        System.out.println();
+        allSalarysDepartament=0;
+        allSalarysDepartamentCout=0;
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees = Main.employees[i];
+            if (departament == employees.getDepartament()) {
+                Main.salarysDepartament[allSalarysDepartamentCout]=employees;
+                allSalarysDepartamentCout++;
+            }
+        }
+        for (int i = 0; i < allSalarysDepartamentCout; i++) {
+            Employee employees = Main.salarysDepartament[i];
+            allSalarysDepartament+=employees.getSalary();
+        }
+        System.out.println(allSalarysDepartament);
+    }
+    public static void averageSalarysDepartament(int departament){
+        System.out.println();
+        allSalarysDepartament=0;
+        allSalarysDepartamentCout=0;
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees = Main.employees[i];
+            if (departament == employees.getDepartament()) {
+                Main.salarysDepartament[allSalarysDepartamentCout]=employees;
+                allSalarysDepartamentCout++;
+            }
+        }
+        for (int i = 0; i < allSalarysDepartamentCout; i++) {
+            Employee employees = Main.salarysDepartament[i];
+            allSalarysDepartament+=employees.getSalary();
+        }
+        allSalarysDepartament=allSalarysDepartament/allSalarysDepartamentCout;
+        System.out.println(allSalarysDepartament);
+    }
+    public static void allupSalarysDepartament(int departament,double index){
+        System.out.println();
+        allSalarysDepartament=0;
+        allSalarysDepartamentCout=0;
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees = Main.employees[i];
+            if (departament == employees.getDepartament()) {
+                Main.salarysDepartament[allSalarysDepartamentCout]=employees;
+                allSalarysDepartamentCout++;
+            }
+        }
+        for (int i = 0; i < allSalarysDepartamentCout; i++) {
+            Employee employees = Main.salarysDepartament[i];
+            employees.setSalary(employees.getSalary()*index);
+            Main.salarysDepartament[i]=employees;
+        }
+        for (int i = 0; i < allSalarysDepartamentCout; i++) {
+            Employee employees=Main.salarysDepartament[i];
+            Main.employees[employees.getA()-1]=Main.salarysDepartament[i];
+        }
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees = Main.employees[i];
+            System.out.println(employees);
+        }
+    }
+    public static void printDepartament(int departament){
+        System.out.println();
+        allDepartamentCount=0;
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees = Main.employees[i];
+            if (departament == employees.getDepartament()) {
+                Main.salarysDepartament[allDepartamentCount]=employees;
+                allDepartamentCount++;
+            }
+        }
+        for (int i = 0; i <allDepartamentCount ; i++) {
+            Employee employees = Main.salarysDepartament[i];
+            System.out.println("id: "+employees.getA()+" ФИО: "+employees.getName()+" Зарплата: "+employees.getSalary());
+        }
+    }
+    public static void salarylesscount(int count){
+        System.out.println();
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees=Main.employees[i];
+            if (count>employees.getSalary()){
+                System.out.println("id: "+employees.getA()+" ФИО: "+employees.getName()+" Зарплата: "+employees.getSalary());
+            }
+        }
+    }
+    public static void salarymorecount(int count){
+        System.out.println();
+        for (int i = 0; i < Main.employees.length; i++) {
+            Employee employees=Main.employees[i];
+            if (count<employees.getSalary()){
+                System.out.println("id: "+employees.getA()+" ФИО: "+employees.getName()+" Зарплата: "+employees.getSalary());
+            }
         }
     }
 
