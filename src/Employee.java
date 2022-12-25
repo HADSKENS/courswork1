@@ -129,7 +129,7 @@ public class Employee {
                 smallSalarysDepartament=employeess.getSalary();
             }
         }
-        System.out.println(smallSalarysDepartament);
+        System.out.println("Наименьшая зарплата по отделу №"+departament+" составляет "+smallSalarysDepartament+" рублей.");
     }
     public static void highsalaryDepartament(int departament) {
         System.out.println();
@@ -148,7 +148,7 @@ public class Employee {
                 highSalarysDepartament=employeess.getSalary();
             }
         }
-        System.out.println(highSalarysDepartament);
+        System.out.println("Наибольшая зарплата по отделу №"+departament+" Составляет "+highSalarysDepartament+" рублей.");
     }
     public static void allSalarysDepartament(int departament){
         System.out.println();
@@ -165,7 +165,7 @@ public class Employee {
             Employee employees = Main.salarysDepartament[i];
             allSalarysDepartament+=employees.getSalary();
         }
-        System.out.println(allSalarysDepartament);
+        System.out.println("Общие затраты на зарплату по отделу №"+departament+" составляет "+allSalarysDepartament+" рублей.");
     }
     public static void averageSalarysDepartament(int departament){
         System.out.println();
@@ -183,7 +183,7 @@ public class Employee {
             allSalarysDepartament+=employees.getSalary();
         }
         allSalarysDepartament=allSalarysDepartament/allSalarysDepartamentCout;
-        System.out.println(allSalarysDepartament);
+        System.out.println("Средняя зарплата по отделу №"+departament+" составляет "+allSalarysDepartament+" рублей.");
     }
     public static void allupSalarysDepartament(int departament,double index){
         System.out.println();

@@ -10,7 +10,7 @@ public class Main {
         Employee.addStaff("Авдеев Александр Константинович", 3, 25000);
         Employee.addStaff("Любимов Артур Иванович", 2, 12000);
         Employee.addStaff("Воронцова Евгения Ярославовна", 2, 10000);
-        Employee.addStaff("Смирнов Ярослав Арсентьевич", 1, 40000);
+        Employee.addStaff("Смирнов Ростисал Арсентьевич", 1, 40000);
         Employee.addStaff("Сорокин Макар Александрович", 1, 100000);
         Employee.addStaff("Фомина Алиса Никитична", 1, 20000);
         Employee.addStaff("Ульянов Фёдор Степанович", 4, 28000);
@@ -23,7 +23,9 @@ public class Main {
         Employee.highSalarys();
         Employee.averageSalary();
         Employee.onlyNames();
-        Employee.smallsalaryDepartament(1);
+        Employee.upSalary();
+        Employee.printAll();
+        Employee.smallsalaryDepartament(2);
         Employee.highsalaryDepartament(1);
         Employee.allSalarysDepartament(1);
         Employee.averageSalarysDepartament(1);
