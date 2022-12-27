@@ -31,16 +31,6 @@ public class Employee {
         this.a = id;
 
     }
-
-    public static void addStaff(String name, int departament, int salaty) {
-        if (place >= 10) {
-            System.out.println("Нельзя добавить работника, закончилось место");
-        }
-        id = place;
-        Employee newEmployee = new Employee(name, departament, salaty);
-        Main.employees[place++] = newEmployee;
-    }
-
     public static void printAll() {
         System.out.println();
         for (int i = 0; i < Main.employees.length; i++) {
@@ -49,7 +39,7 @@ public class Employee {
         }
     }
 
-    public static void allSalary() {
+    public static void calculateSalary() {
         System.out.println();
         allSalarys = 0;
         for (int i = 0; i < Main.employees.length; i++) {
@@ -59,7 +49,7 @@ public class Employee {
         System.out.println("Затраты на зарплаты сотрудникам составляют: " + allSalarys + " рублей.");
     }
 
-    public static void smallSalary() {
+    public static void lookingSmallSalary() {
         System.out.println();
         Employee first = Main.employees[0];
         smallSalarys = first.getSalary();
@@ -74,7 +64,7 @@ public class Employee {
         System.out.println("Сотрудник с наименьшей зарплатой " + smallSalatysName + " размер зарплаты " + smallSalarys + " рублей.");
     }
 
-    public static void highSalarys() {
+    public static void lookingHighSalarys() {
         System.out.println();
         Employee first = Main.employees[0];
         highSalarys = first.getSalary();
@@ -89,13 +79,13 @@ public class Employee {
         System.out.println("Сотрудник с наибольшей зарплатой " + highSlarysName + " размер зарплаты " + highSalarys + " рублей.");
     }
 
-    public static void averageSalary() {
+    public static void lookingAverageSalary() {
         System.out.println();
         averageSalary = allSalarys / id;
         System.out.println("Среднее значение зарплат составляет " + averageSalary + " рублей.");
     }
 
-    public static void onlyNames() {
+    public static void printOnlyNames() {
         System.out.println();
         for (int i = 0; i < Main.employees.length; i++) {
             Employee employees = Main.employees[i];
@@ -103,7 +93,7 @@ public class Employee {
         }
     }
 
-    public static void upSalary() {
+    public static void raiseSalary() {
         for (int i = 0; i < Main.employees.length; i++) {
             Employee employees = Main.employees[i];
             upSalarys = employees.getSalary();
@@ -112,7 +102,7 @@ public class Employee {
             Main.employees[i] = employees;
         }
     }
-    public static void smallsalaryDepartament(int departament) {
+    public static void lookingSmallsalaryDepartament(int departament) {
         System.out.println();
         for (int i = 0; i < Main.employees.length; i++) {
             Employee employees = Main.employees[i];
@@ -131,7 +121,7 @@ public class Employee {
         }
         System.out.println("Наименьшая зарплата по отделу №"+departament+" составляет "+smallSalarysDepartament+" рублей.");
     }
-    public static void highsalaryDepartament(int departament) {
+    public static void lookingHighsalaryDepartament(int departament) {
         System.out.println();
         for (int i = 0; i < Main.employees.length; i++) {
             Employee employees = Main.employees[i];
@@ -150,7 +140,7 @@ public class Employee {
         }
         System.out.println("Наибольшая зарплата по отделу №"+departament+" Составляет "+highSalarysDepartament+" рублей.");
     }
-    public static void allSalarysDepartament(int departament){
+    public static void calculateAllSalarysDepartament(int departament){
         System.out.println();
         allSalarysDepartament=0;
         allSalarysDepartamentCout=0;
@@ -167,7 +157,7 @@ public class Employee {
         }
         System.out.println("Общие затраты на зарплату по отделу №"+departament+" составляет "+allSalarysDepartament+" рублей.");
     }
-    public static void averageSalarysDepartament(int departament){
+    public static void lookingAverageSalarysDepartament(int departament){
         System.out.println();
         allSalarysDepartament=0;
         allSalarysDepartamentCout=0;
@@ -185,7 +175,7 @@ public class Employee {
         allSalarysDepartament=allSalarysDepartament/allSalarysDepartamentCout;
         System.out.println("Средняя зарплата по отделу №"+departament+" составляет "+allSalarysDepartament+" рублей.");
     }
-    public static void allupSalarysDepartament(int departament,double index){
+    public static void raiseAllSalarysDepartament(int departament,double index){
         System.out.println();
         allSalarysDepartament=0;
         allSalarysDepartamentCout=0;
@@ -225,7 +215,7 @@ public class Employee {
             System.out.println("id: "+employees.getA()+" ФИО: "+employees.getName()+" Зарплата: "+employees.getSalary());
         }
     }
-    public static void salarylesscount(int count){
+    public static void lookingSalaryLessCount(int count){
         System.out.println();
         for (int i = 0; i < Main.employees.length; i++) {
             Employee employees=Main.employees[i];
@@ -234,7 +224,7 @@ public class Employee {
             }
         }
     }
-    public static void salarymorecount(int count){
+    public static void lookingSalaryMoreCount(int count){
         System.out.println();
         for (int i = 0; i < Main.employees.length; i++) {
             Employee employees=Main.employees[i];
